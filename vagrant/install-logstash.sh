@@ -1,6 +1,9 @@
 #!/bin/sh
 
 export VAGRANT_MNT="/vagrant"
+if [ "$VAGRANT" = false ] ; then
+    VAGRANT_MNT="$(pwd)"
+fi
 
 echo "OO install logstash"
 

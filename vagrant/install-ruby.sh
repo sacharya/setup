@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 export VAGRANT_MNT="/vagrant"
+if [ "$VAGRANT" = false ] ; then
+    VAGRANT_MNT="$(pwd)"
+fi
 
 source /usr/local/rvm/scripts/rvm
 rvm use --default --install 1.9.3
